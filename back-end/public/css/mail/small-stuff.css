@@ -1,0 +1,30 @@
+.bsxx-hol{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+
+.bsxx-hol h1{
+  font-size: 5rem;
+  line-height: 6rem;
+  /* padding: 1rem; */
+}
+
+.bsxx-hol p{
+  font-size: 1rem;
+  padding: .5rem;
+  padding-top: 0;
+}
+
+.bsxx-hol small{
+  font-style: italic;
+}
+
+.bsxx-hol small a{
+  color: slategray;
+}

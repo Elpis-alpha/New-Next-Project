@@ -1,0 +1,117 @@
+body{
+  font-family: 'Poor Richard';
+}
+
+.he{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo{
+  padding: 2rem;
+  padding-right: 1rem;
+  padding-bottom: 0;
+  width: auto;
+}
+
+.logo img{
+  width: 8rem;
+}
+
+.intro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: left;
+  width: 100%;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+.intro .first{
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  padding: .5rem;
+}
+
+.intro .second{
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.cont .first{
+  padding: .5rem;
+  width: 100%;
+}
+
+.cont .second{
+  width: 100%;
+  padding: .5rem;
+}
+
+.cont .f-wid{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: .3rem 1rem;
+  background-color: #4472c1;
+  border: 0 none; outline: 0 none;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  border-radius: .5rem;
+  transition: background-color .5s;
+}
+
+.cont .f-wid.xx{ background-color: darkred;}
+.cont .f-wid.xx:hover{ background-color: rgb(199, 28, 28);}
+
+.cont .f-wid:disabled{
+  opacity: .5;
+}
+
+.cont .f-wid:hover{
+  background-color: green;
+}
+
+.cont .third{
+  width: 100%;
+  padding: 1rem .5rem;
+}
+
+.cont .fourth{
+  width: 100%;
+  padding: .5rem;
+}
+
+textarea{
+  width: 100%;
+  margin-top: .5rem;
+  background-color: rgba(0, 0, 255, .08);
+  border-radius: 1rem;
+  padding: .5rem 1rem;
+  min-height: 6rem;
+  border: 0 none; outline: 0 none;
+  border: 1px solid rgba(0, 0, 255, .1);
+}

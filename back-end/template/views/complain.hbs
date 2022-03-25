@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  {{>headStuff}}
+
+  <link rel="stylesheet" href="/css/complain.css">
+
+</head>
+
+<body>
+
+  <div class="big-wrapper">
+
+    <main>
+
+      <div class="main-content">
+
+        <div class="cont">
+
+          <h1>What is on Your Mind</h1>
+
+          <form id="mail-idea" method="post" action="/accept-complaint">
+
+            <div class="form-pack">
+
+              <input type="text" name="title" required placeholder="Title" >
+
+              <textarea required name="content" placeholder="Body"></textarea> <br>
+
+              <button class="f-wid hexx">Send</button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  {{>messages}}
+
+</body>
+
+</html>

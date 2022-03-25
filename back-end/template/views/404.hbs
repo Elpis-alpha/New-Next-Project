@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  {{>headStuff}}
+
+  <link rel="stylesheet" href="/css/404.css">
+
+</head>
+
+<body>
+
+  <div class="big-wrapper">
+
+    <main>
+
+      <div class="main-content">
+
+        <div class="x404-hol">
+
+          <h1>{{ code }}</h1>
+
+          <p>🎵 Well this is rather embarrassing isn't it 🎵</p>
+
+          <small>
+
+            {{error}}. <br> Send <a href="mailto:{{ email }}">a mail to the admin</a> to get more details or
+
+            <a href="{{complainLink}}" target="_blank" rel="noopener noreferrer">lodge a complaint here </a> or
+
+            visit the frontend at <a href="{{ frontendLocation }}" target="_blank" rel="noopener noreferrer">{{siteName}}</a>
+
+          </small>
+
+          <div class="links">
+
+            <a href="{{homeLink}}">Home</a>
+            
+            |
+
+            <a href="{{complainLink}}">Complain</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  {{>messages}}
+
+</body>
+
+</html>

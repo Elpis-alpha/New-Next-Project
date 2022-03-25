@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  {{>headStuff}}
+
+  <link rel="stylesheet" href="/css/mail/welcome.css">
+
+  <script>const user = {{{userString}}}</script>
+
+  <script src="/js/mail/welcome.js"></script>
+
+</head>
+
+<body>
+
+  <div class="big-wrapper">
+
+    <main>
+
+      <div class="main-content">
+
+        <div class="he">
+
+          <div class="logo">
+
+            <img src="/logo.png" alt="logo">
+
+          </div>
+
+          <div class="intro">
+
+            <div class="first">Hello {{user.name}}</div>
+
+            <div class="second">Welcome to {{siteName}}</div>
+
+          </div>
+
+        </div>
+
+        <div class="cont">
+
+          <div class="first">
+
+            Thanks for signing up with us here at {{siteName}}. We hope you enjoy and take full
+
+            advantage of your time with us, you can check out the site at
+
+            <a href="{{frontendLocation}}" target="_blank" rel="noopener noreferrer">over here</a>.
+
+          </div>
+
+          <div class="second">
+
+            Let's get your email verified, click the link below to verify this email "{{user.email}}" <br>
+
+            <a href="{{verifyLink}}" class="f-wid" target="_blank" rel="noopener noreferrer" style="margin-top: .5rem;">Verify Email</a>
+
+          </div>
+
+          <div class="third">
+
+            Next, if you have any ideas to improve {{siteName}} or if you have a proposition for a new site
+
+            or anything to say at all even questions, kindly state it below or reply this message or 
+            
+            <a href="{{complainLink}}" target="_blank" rel="noopener noreferrer"> complain here.</a>
+
+            <form id="mail-idea">
+
+              <div class="form-pack">
+
+                <textarea id="mail-content" required></textarea> <br>
+
+                <button class="f-wid hexx">Send</button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+          <div class="fourth">
+
+            If you didn't create this account, we are very sorry for any inconvienience caused. 
+            
+            Click the button below to completely delete this account. Kindly note that once verified, deleting will not be possible from here.
+
+            Also the option to create an account after deleting will be presented in the next screen
+
+            <a href="{{deleteLink}}" class="f-wid xx" target="_blank" rel="noopener noreferrer" style="margin-top: .5rem;">Delete Account</a>
+
+          </div>
+
+          <div class="fifth">
+
+            Once again thanks for signing up with us and congratulations
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  {{>messages}}
+
+</body>
+
+</html>

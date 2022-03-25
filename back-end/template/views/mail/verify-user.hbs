@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  {{>headStuff}}
+
+  <link rel="stylesheet" href="/css/mail/small-stuff.css">
+
+</head>
+
+<body>
+
+  <div class="big-wrapper">
+
+    <main>
+
+      <div class="main-content">
+
+        <div class="bsxx-hol">
+
+          <h1>Congratulations</h1>
+
+          <p>Your email is now verified ✔</p>
+
+          <small>
+
+            Visit the site at <a href="{{ frontendLocation }}" target="_blank" rel="noopener noreferrer">{{siteName}}</a> and 
+
+            you can also <a href="{{complainLink}}" target="_blank" rel="noopener noreferrer">lodge a complaint here.</a>
+
+          </small>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  {{>messages}}
+
+</body>
+
+</html>

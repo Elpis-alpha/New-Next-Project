@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  {{>headStuff}}
+
+  <link rel="stylesheet" href="/css/index.css">
+
+</head>
+
+<body>
+
+  <div class="big-wrapper">
+
+    <main>
+
+      <div class="main-content">
+
+        <div class="index-holder">
+
+          <h1 class="welcome">Welcome to {{siteName}}</h1>
+
+          <p>
+
+            We are the ones who work behind the scenes to ensure the smooth running of {{ siteName }}
+
+            believe it or not, and we have quite a few secrets 😀
+
+          </p>
+
+          <small>If you are puzzled by this screen, <a href="{{ frontendLocation }}">kindly click me</a> or <a href="{{complainLink}}">complain</a></small>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  {{>messages}}
+
+</body>
+
+</html>

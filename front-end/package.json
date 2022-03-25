@@ -1,0 +1,44 @@
+{
+  "name": "front-end",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.0",
+    "@tiptap/extension-image": "^2.0.0-beta.27",
+    "@tiptap/extension-link": "^2.0.0-beta.36",
+    "@tiptap/extension-mention": "^2.0.0-beta.95",
+    "@tiptap/extension-placeholder": "^2.0.0-beta.48",
+    "@tiptap/extension-text-align": "^2.0.0-beta.29",
+    "@tiptap/extension-text-style": "^2.0.0-beta.23",
+    "@tiptap/react": "^2.0.0-beta.108",
+    "@tiptap/starter-kit": "^2.0.0-beta.183",
+    "axios": "^0.26.0",
+    "framer-motion": "^6.2.8",
+    "hamburger-react": "^2.4.1",
+    "html-react-parser": "^1.4.8",
+    "moment": "^2.29.1",
+    "next": "12.1.0",
+    "nextjs-progressbar": "^0.0.14",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "react-loader-spinner": "^6.0.0-0",
+    "react-redux": "^7.2.6",
+    "react-select": "^5.2.2",
+    "redux": "^4.1.2",
+    "styled-components": "^5.3.3",
+    "universal-cookie": "^4.0.4",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "eslint": "8.10.0",
+    "eslint-config-next": "12.1.0"
+  }
+}

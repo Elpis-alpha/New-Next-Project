@@ -1,0 +1,35 @@
+.x404-hol{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+
+.x404-hol h1{
+  font-size: 5rem;
+  line-height: 6rem;
+  /* padding: 1rem; */
+}
+
+.x404-hol p{
+  font-size: 1rem;
+  padding: .5rem;
+  padding-top: 0;
+}
+
+.x404-hol small{
+  font-style: italic;
+}
+
+.x404-hol small a{
+  color: slategray;
+}
+
+.x404-hol .links a{
+  display: inline-block;
+  padding: 0 .5rem;
+}
