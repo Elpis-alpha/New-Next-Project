@@ -12,12 +12,18 @@ import { FaUser, FaInfoCircle } from "react-icons/fa"
 
 import { siteName } from "../../__env"
 
+import { useSelector } from "react-redux"
+
 
 const NavBar = () => {
 
   const [isNavOpened, setIsNavOpened] = useState(false)
 
   const navChildrenRef = useRef(null)
+
+  const { showNav } = useSelector(store => store.display)
+
+  const { available, data: userData } = useSelector(store => store.user)
 
   useEffect(() => {
 
@@ -30,7 +36,7 @@ const NavBar = () => {
 
   return (
 
-    <NavStyle>
+    <NavStyle className={showNav ? 'show-nav' : 'hide-nav'}>
 
       <div className="heading">
 
@@ -90,6 +96,18 @@ const NavStyle = styled.nav`
   border-bottom: 1px solid rgba(128, 128, 128, 0.3);
   z-index: 100;
   width: 100%;
+
+  &.hide-nav{
+    /* display: none; */
+    height: 0;
+
+    & > div{
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+    }
+
+  }
 
   .heading {
 

@@ -1,5 +1,7 @@
 import { backendLocation } from './__env'
 
+
+// User Routes
 export const createUser = () => `${backendLocation}/api/users`
 
 export const getUser = () => `${backendLocation}/api/users/user`
@@ -11,6 +13,10 @@ export const deleteUser = () => `${backendLocation}/api/users/user`
 export const getUserbyID = (userID) => `${backendLocation}/api/users/id/${userID}`
 
 export const getUserbyEmail = (email) => `${backendLocation}/api/users/email/${email}`
+
+export const changePassword = () => `${backendLocation}/api/users/user/password`
+
+export const sendVerificationEmail = () => `${backendLocation}/api/users/user/verify`
 
 export const uploadAvatar = () => `${backendLocation}/api/users/user/avatar`
 

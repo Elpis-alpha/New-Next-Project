@@ -7,6 +7,8 @@ const sharp = require('sharp')
 const User = require('../models/User')
 
 const auth = require('../middleware/auth')
+const { errorJson } = require('../middleware/errors')
+
 
 const router = new express.Router()
 
@@ -42,9 +44,7 @@ router.post('/api/users', async (req, res) => {
 
   } catch (error) {
 
-    console.log(error);
-
-    res.status(400).send({ error: 'Server Error' })
+    return errorJson(res, 400)
 
   }
 
@@ -76,7 +76,7 @@ router.post('/api/users/login', async (req, res) => {
 
   } catch (error) {
 
-    res.status(400).send({ error: 'Server Error' })
+    return errorJson(res, 400)
 
   }
 
@@ -96,7 +96,7 @@ router.post('/api/users/logout', auth, async (req, res) => {
 
   } catch (error) {
 
-    res.status(500).send({ error: 'Server Error' })
+    return errorJson(res, 500)
 
   }
 
@@ -116,7 +116,7 @@ router.post('/api/users/logout/all', auth, async (req, res) => {
 
   } catch (error) {
 
-    res.status(500).send({ error: 'Server Error' })
+    return errorJson(res, 500)
 
   }
 
@@ -140,13 +140,13 @@ router.get('/api/users/id/:id', async (req, res) => {
 
     const user = await User.findById(_id)
 
-    if (!user) return res.status(404).send({ error: 'Server Error' })
+    if (!user) return errorJson(res, 404)
 
     res.send(user.toPublicJSON())
 
   } catch (e) {
 
-    res.status(500).send({ error: 'Server Error' })
+    return errorJson(res, 500)
 
   }
 
@@ -162,13 +162,13 @@ router.get('/api/users/email/:email', async (req, res) => {
 
     const user = await User.findOne({ email: email })
 
-    if (!user) return res.status(404).send({ error: 'Server Error' })
+    if (!user) return errorJson(res, 404)
 
     res.send(user.toPublicJSON())
 
   } catch (e) {
 
-    res.status(500).send({ error: 'Server Error' })
+    return errorJson(res, 500)
 
   }
 
@@ -201,7 +201,32 @@ router.patch('/api/users/user', auth, async (req, res) => {
 
   } catch (error) {
 
-    res.status(400).send({ error: 'Server Error' })
+    return errorJson(res, 500)
+
+  }
+
+})
+
+
+// Sends patch request to change password
+router.post('/api/users/user/password', auth, async (req, res) => {
+
+  try {
+
+    // Because of password middleware
+    const user = req.user
+
+    const _user = await User.findbyCredentials(user.email, req.body.oldPassword)
+
+    user.password = req.body.newPassword
+
+    await user.save()
+
+    res.status(201).send(user)
+
+  } catch (error) {
+
+    return errorJson(res, 400)
 
   }
 
@@ -223,11 +248,33 @@ router.delete('/api/users/user', auth, async (req, res) => {
 
   } catch (error) {
 
-    res.status(500).send({ error: 'Server Error' })
+    return errorJson(res, 500)
 
   }
 
 })
+
+
+// Sends post request to change image quality and convert to binary
+router.post('/api/to-img/pic', upload.single('image'), async (req, res) => {
+
+  const quality = parseInt(req.query.quality)
+
+  const width = parseInt(req.query.width)
+
+  try {
+
+    const buffer = await sharp(req.file.buffer).resize({ width }).png({ quality }).toBuffer()
+
+    res.send({ buffer })
+
+  } catch (error) {
+
+    return errorJson(res, 400)
+
+  }
+
+}, (error, req, res, next) => errorJson(res, 500))
 
 
 // Sends post request to create and upload the users profile avatar
@@ -249,11 +296,11 @@ router.post('/api/users/user/avatar', auth, upload.single('avatar'), async (req,
 
   } catch (error) {
 
-    res.status(400).send({ error: 'Server Error' })
+    return errorJson(res, 400)
 
   }
 
-}, (error, req, res, next) => res.status(400).send({ error: error.message }))
+}, (error, req, res, next) => errorJson(res, 500))
 
 
 // Sends delete request to delete the users profile avatar
@@ -273,7 +320,7 @@ router.delete('/api/users/user/avatar', auth, async (req, res) => {
 
   } catch (error) {
 
-    res.status(500).send({ error: 'Server Error' })
+    return errorJson(res, 500)
 
   }
 
@@ -297,7 +344,7 @@ router.get('/api/users/pic-id/:id/avatar', async (req, res) => {
 
   } catch (error) {
 
-    res.status(404).send({ error: 'Server Error' })
+    return errorJson(res, 500)
 
   }
 

@@ -45,7 +45,7 @@ const ButtonStyle = styled.button`
     top: 0; bottom: 0;
     height: 100%;
     font-size: 1.5rem;
-    line-height: 1.5rem;
+    line-height: 2rem;
     right: -1rem;
     transition: 0.5s;
     display: flex;

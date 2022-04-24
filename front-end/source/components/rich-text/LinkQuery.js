@@ -29,7 +29,7 @@ const LinkQuery = ({ theLink }) => {
 
           <label>Link Text</label>
 
-          <input type="text" required value={linkText} onInput={e => setLinkText(e.target.value.trim())} />
+          <input type="text" required value={linkText} onInput={e => setLinkText(e.target.value)} />
 
         </div>
 

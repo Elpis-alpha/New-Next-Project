@@ -2,9 +2,10 @@ import styled from "styled-components"
 
 import { BiCheckShield } from "react-icons/bi"
 
-import { FaCopy, FaSave } from "react-icons/fa"
+import { FaCopy, FaSave, FaTimes } from "react-icons/fa"
 
 import { useSelector } from "react-redux"
+
 import { Oval } from "react-loader-spinner"
 
 
@@ -16,11 +17,13 @@ const MiniMessage = () => {
 
     'ok': <BiCheckShield size="1.2rem" />,
 
-    'copy': <FaCopy size="1.2rem"/>,
+    'copy': <FaCopy size="1.2rem" />,
 
-    'save': <FaSave size="1.2rem"/>,
+    'save': <FaSave size="1.2rem" />,
 
-    'loading': <Oval width="1.2rem" height="1.2rem" color="white" secondaryColor="white"/>,
+    'times': <FaTimes size="1.2rem" />,
+
+    'loading': <Oval width="1.2rem" height="1.2rem" color="white" secondaryColor="white" />,
 
   }
 

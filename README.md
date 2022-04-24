@@ -4,6 +4,7 @@
 > 
 > 1. Copy the root folder to a desired location  
 > 1. Rename the folder to that of your project  
+> 1. Delete the .git folder  
 > 1. Change your enviroument variables in config for back-end 
 > 1. Change your enviroument variables in __env for front-end 
 > 1. Edit the readme files in back-end and front-end  
@@ -16,13 +17,14 @@
 > ## To Begin Production
 > ### Create two repositories for front-end and back-end respectively
 > #### Lets start with the back-end
+> 1. Confirm manifest.json
 > 1. `git init` on backend
 > 1. `git remote add origin <origin>` to add origin
 > 1. `git branch -M main` to branch to main
 > 1. `git add .` to add all files
 > 1. `git commit -m 'First Commit'` to commit all
 > 1. `git push -u origin main` to push main and default
-> 1. `heroku login` login to heroku
+> 1. `heroku login` or `heroku login -i` login to heroku (i flag provides in-console authentication)
 > 1. `heroku create <app_name>` create a heroku app
 > 1. Set all enviroument variables
 > 1. `mongodb+srv://<username>:<password>@cluster0.afuvs.mongodb.net/<app_name>-api?retryWrites=true&w=majority`
@@ -88,7 +90,8 @@
 
 
 > ## Awaiting Implementation
-> - ...
+> - Protect Links
+> - Reveal View
 
 
 ## What can I do

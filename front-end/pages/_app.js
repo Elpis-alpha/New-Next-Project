@@ -18,6 +18,10 @@ import GlobalStyles from '../source/beautify/GlobalStyles'
 
 import store from '../source/store/store'
 
+import ProtectLinks from '../source/components/general/ProtectLinks';
+
+import MyCollector from '../source/components/general/MyCollector';
+
 
 const MyApp = ({ Component, pageProps }) => {
 
@@ -25,29 +29,31 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
 
-    <>
+    <Provider store={store}>
 
-      <Provider store={store}>
+      <GlobalStyles />
 
-        <GlobalStyles />
+      <ProtectLinks />
 
-        <NextjsProgressbar color='#4472c3' />
+      <NextjsProgressbar color='#4472c3' />
 
-        <Authenticator />
+      <Authenticator />
 
-        <BigWrapper>
+      <BigWrapper>
 
-          <NavBar />
+        <NavBar />
+
+        <MyCollector>
 
           <Component {...pageProps} />
 
-        </BigWrapper>
+        </MyCollector>
 
-        <Message />
+      </BigWrapper>
 
-      </Provider>
+      <Message />
 
-    </>
+    </Provider>
 
   )
 

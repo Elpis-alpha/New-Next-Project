@@ -60,7 +60,7 @@ app.use(express.static(publicPath))
 
 
 // Automatically parse incoming reqests
-app.use(express.json())
+app.use(express.json({ limit: "20mb" }))
 
 
 // Automatically parse form body and encodes
@@ -72,7 +72,7 @@ app.use(cors())
 
 
 // One second delay for local development
-// if (!isProduction) { app.use(delay) }
+if (!isProduction) { app.use(delay) }
 
 
 // Automatically allows user routers

@@ -1,10 +1,21 @@
 import styled from "styled-components"
 
+import { useSelector } from "react-redux"
+
+
 const BigWrapper = ({ ...props }) => {
+
+  const { tested } = useSelector(store => store.user)
+
+  const { revealView } = useSelector(store => store.display)
 
   return (
 
-    <BigWrapperStyle>{props.children}</BigWrapperStyle>
+    <BigWrapperStyle>
+
+      {(tested && revealView) ? props.children : <></>}
+
+    </BigWrapperStyle>
 
   )
 

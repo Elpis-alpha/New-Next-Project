@@ -1,8 +1,8 @@
 import HeadTag from '../source/components/general/HeadTag'
 
 import styled from "styled-components"
-import { complain } from '../source/__env'
 
+import { complain } from '../source/__env'
 
 
 const PageNotFound = () => {
@@ -17,9 +17,9 @@ const PageNotFound = () => {
 
         <h1>404</h1>
 
-        <p>Unfortunately, it seemes the page you requested for doesn't currently exist.</p>
+        <p>Unfortunately, it seemes the page you requested for does not currently exist.</p>
 
-        <small>If you have any doubts regarding why this doesn't exist, kindly <a href={complain} target="_blank" rel="noopener noreferrer">lodge a complaint here</a></small>
+        <small>If you have any doubts regarding why this does not exist, kindly <a href={complain} target="_blank" rel="noopener noreferrer">lodge a complaint here</a></small>
 
       </div>
 

@@ -6,16 +6,20 @@ import Cookies from 'universal-cookie'
 
 import { getUser } from '../../api'
 
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { setUserData, setUserTest } from '../../store/slice/userSlice'
 
 import { siteName } from '../../__env'
 
+import { getApiJson } from '../../controllers/APICtrl'
+
 
 const InitialLoader = ({ status }) => {
 
   const dispatch = useDispatch()
+
+  const { revealView } = useSelector(store => store.display)
 
   useEffect(async () => {
 
@@ -31,23 +35,13 @@ const InitialLoader = ({ status }) => {
     // Fetch and Validate user
     if (token !== undefined) {
 
-      const user = await fetch(getUser(), {
+      try {
 
-        method: 'GET',
+        userData = await getApiJson(getUser(), token)
 
-        headers: {
+        userData.token = token
 
-          'Content-type': 'application/json',
-
-          'Authorization': `Bearer ${token}`
-
-        }
-
-      })
-
-      userData = await user.json()
-
-      userData.token = token
+      } catch (e) { userData = undefined }
 
     }
 
@@ -70,7 +64,7 @@ const InitialLoader = ({ status }) => {
 
   return (
 
-    <InitLoaderStyle className={status}>
+    <InitLoaderStyle className={status !== 'remove' ? status : (revealView ? status : 'show')}>
 
       <div>
 
@@ -130,7 +124,7 @@ const InitLoaderStyle = styled.div`
     line-height: 3rem;
     padding: 3rem 0;
     text-align: center;
-    font-family: Redressed;
+    font-family: Styled;
   }
     
   &.remove{

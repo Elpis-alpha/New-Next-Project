@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 
-const Page = () => {
+const IndexPage = () => {
 
   return (
 
@@ -23,4 +23,4 @@ const IndexPageStyle = styled.div`
 `
 
 
-export default Page
+export default IndexPage

@@ -494,6 +494,12 @@ export const datetoDateStr = (theDate) => {
 
 }
 
+export const datetoDateSlash = (theDate) => {
+
+  return `${theDate.getDate()}/${theDate.getMonth() + 1}/${theDate.getFullYear().toString().substr(2)}`
+
+}
+
 export const timeBetweenDatesW = (date1, date2) => {
 
   let returnValue

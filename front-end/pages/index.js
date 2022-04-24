@@ -1,6 +1,6 @@
 import HeadTag from '../source/components/general/HeadTag'
 
-import Page from '../source/components/index/Page'
+import IndexPageX from '../source/components/index/IndexPage'
 
 
 const IndexPage = () => {
@@ -11,7 +11,7 @@ const IndexPage = () => {
 
       <HeadTag />
 
-      <Page />
+      <IndexPageX />
 
     </>
 

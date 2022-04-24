@@ -1,3 +1,5 @@
+import EditorPlaceholder from "@tiptap/extension-placeholder"
+
 import StarterKit from "@tiptap/starter-kit"
 
 import styled from "styled-components"
@@ -31,7 +33,7 @@ import LinkQuery from "./LinkQuery"
 import ImageQuery from "./ImageQuery"
 
 
-const FullEditor = ({ editorState, setEditorState }) => {
+const FullEditor = ({ editorState, setEditorState, placeholder = "" }) => {
 
   const [showEmoji, setShowEmoji] = useState(false)
 
@@ -94,7 +96,7 @@ const FullEditor = ({ editorState, setEditorState }) => {
 
       EditorLink.configure({ openOnClick: false }),
 
-      Underline,
+      Underline, EditorPlaceholder.configure({ placeholder })
 
     ],
 
@@ -649,7 +651,17 @@ const EditorStyle = styled.div`
 
       img{
         max-width: 100%;
+        max-height: 50vh;
         display: block;
+        border-radius: .2rem;
+      }
+
+      p.is-editor-empty:first-child::before{
+        content: attr(data-placeholder);
+        color: rgba(0, 0, 0, .5);
+        float: left;
+        height: 0;
+        pointer-events: none;
       }
 
     }

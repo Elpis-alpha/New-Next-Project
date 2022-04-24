@@ -23,23 +23,31 @@ const ImageQuery = ({ theImage }) => {
 
     if (!image) { setImage(""); return setImageName("Choose an Image") }
 
-    if (image.size > 10e6) { setImage(""); return setImageName("Choose an Image") }
+    if (image.size > 5e6) { setImage(""); return setImageName("Too Large") }
 
-    const reader = new FileReader()
+    const img = new Image()
 
-    setImageName("Loading...")
+    img.src = URL.createObjectURL(image)
 
-    setImage("")
+    img.onload = () => {
 
-    reader.onload = () => {
+      const canvas = document.createElement('canvas')
+
+      canvas.width = img.width
+
+      canvas.height = img.height
+
+      const ctx = canvas.getContext('2d')
+
+      ctx.drawImage(img, 0, 0)
+
+      const retVal = canvas.toDataURL("image/jpeg", 0.3)
 
       setImageName(image.name)
 
-      setImage(reader.result)
+      setImage(retVal)
 
     }
-
-    reader.readAsDataURL(image)
 
   }
 

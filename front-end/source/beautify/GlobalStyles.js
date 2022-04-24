@@ -5,17 +5,17 @@ const GlobalStyle = createGlobalStyle`
 /* Fonts Used */
 
 @font-face{
-  font-family: 'Poor Richard';
+  font-family: 'Other';
   src: url(/fonts/poor_richard.ttf);
 }
 
 @font-face{
-  font-family: 'Footlight';
+  font-family: 'Main';
   src: url(/fonts/footlight.ttf);
 }
 
 @font-face{
-  font-family: 'Redressed';
+  font-family: 'Styled';
   src: url(/fonts/redressed.ttf);
 }
 
@@ -124,7 +124,7 @@ html{
 @media screen and (max-width: 50px) {
   
   html{
-    font-size: 2px;
+    font-size: 4px;
   }
 
 }
@@ -154,9 +154,9 @@ body{
   min-height: 100vh;
   font-size: .8rem;
   line-height: 2rem;
-  font-family: Footlight;
-  background-color: #e0e0e0;
-  color: #7c7c7c;
+  font-family: Main;
+  background-color: #f7f7f7;
+  color: #323232;
   overflow-x: hidden;
   padding-right: .1rem;
   display: flex;
@@ -184,6 +184,14 @@ body > #__next{
 
 a{
   color: slategray;
+}
+
+button{
+  border: 1px solid grey;
+  background-color: transparent;
+  outline: 0 none;
+  cursor: pointer;
+  padding: 0 .5rem;
 }
 
 

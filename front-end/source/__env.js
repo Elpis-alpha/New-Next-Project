@@ -4,7 +4,7 @@ export const siteName = "New Project"
 
 export const siteDescription = "A simple template of a functional next js application"
 
-export const keywordx = "elpis,next,nextjs"
+export const keywordx = ["elpis", "next", "nextjs"]
 
 export const emailName = "New Project"
 
@@ -17,3 +17,7 @@ export const complain = "http://localhost:5000/complain"
 export const isProduction = false
 
 export const hostEmail = "site.overseer.alpha@gmail.com"
+
+export const protectedLinks = ['/secrete-stuff*']
+
+export const authLink = "/verify"
